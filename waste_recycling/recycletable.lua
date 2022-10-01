@@ -2,10 +2,10 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 function setloot()
    num = math.random(4)
-   if num == 1 then return "waste_materials:waste_glass"
-   elseif num == 2 then return "waste_materials:waste_metal"
-   elseif num == 3 then return "waste_materials:waste_plastic"
-   elseif num == 4 then return "waste_materials:waste_paper"
+   if num == 1 then return "waste_materials:waste_glass_raw"
+   elseif num == 2 then return "waste_materials:waste_metal_raw"
+   elseif num == 3 then return "waste_materials:waste_plastic_raw"
+   elseif num == 4 then return "waste_materials:waste_paper_raw"
    end
 end
 

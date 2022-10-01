@@ -43,3 +43,25 @@ minetest.register_node("waste_materials:waste_glass_node", {
    tiles = {"waste_materials_waste_glass_node.png"},
    groups = {oddly_breakable_by_hand = 2, waste = 1},
 })
+
+--Raw waste
+
+minetest.register_craftitem("waste_materials:waste_glass_raw", {
+   description = S("Raw Glass Waste"),
+   inventory_image = "waste_materials_waste_glass_raw.png",
+})
+
+minetest.register_craftitem("waste_materials:waste_metal_raw", {
+   description = S("Raw Metal Waste"),
+   inventory_image = "waste_materials_waste_metal_raw.png",
+})
+
+minetest.register_craftitem("waste_materials:waste_paper_raw", {
+   description = S("Raw Paper Waste"),
+   inventory_image = "waste_materials_waste_paper_raw.png",
+})
+
+minetest.register_craftitem("waste_materials:waste_plastic_raw", {
+   description = S("Raw Plastic Waste"),
+   inventory_image = "waste_materials_waste_plastic_raw.png",
+})

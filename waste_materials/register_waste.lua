@@ -34,13 +34,15 @@ minetest.register_node("waste_materials:waste_plastic_node", {
 ]]
 minetest.register_node("waste_materials:waste_metal_node", {
    description = S("Metal Waste"),
-   tiles = {"waste_materials_waste_metal_node.png"},
+   tiles = "waste_materials_dummy_node.png",
+   --tiles = {"waste_materials_waste_metal_node.png"}, --missing
    groups = {oddly_breakable_by_hand = 2, waste = 1},
 })
 
 minetest.register_node("waste_materials:waste_glass_node", {
    description = S("Glass Waste"),
-   tiles = {"waste_materials_waste_glass_node.png"},
+   tiles = "waste_materials_dummy_node.png",
+   --tiles = {"waste_materials_waste_glass_node.png"}, --missing
    groups = {oddly_breakable_by_hand = 2, waste = 1},
 })
 
@@ -53,7 +55,8 @@ minetest.register_craftitem("waste_materials:waste_glass_raw", {
 
 minetest.register_craftitem("waste_materials:waste_metal_raw", {
    description = S("Raw Metal Waste"),
-   inventory_image = "waste_materials_waste_metal_raw.png",
+   inventory_image = "waste_materials_dummy_item.png",
+   --inventory_image = "waste_materials_waste_metal_raw.png", --missing
 })
 
 minetest.register_craftitem("waste_materials:waste_paper_raw", {
@@ -63,14 +66,16 @@ minetest.register_craftitem("waste_materials:waste_paper_raw", {
 
 minetest.register_craftitem("waste_materials:waste_plastic_raw", {
    description = S("Raw Plastic Waste"),
-   inventory_image = "waste_materials_waste_plastic_raw.png",
+   inventory_image = "waste_materials_dummy_item.png",
+   --inventory_image = "waste_materials_waste_plastic_raw.png", --missing
 })
 
 --Fine Waste
 
 minetest.register_craftitem("waste_materials:waste_glass_fine", {
    description = S("Fine Glass Waste"),
-   inventory_image = "waste_materials_waste_glass_fine.png",
+   inventory_image = "waste_materials_dummy_item.png",
+   --inventory_image = "waste_materials_waste_glass_fine.png", --missing
 })
 
 ---Metal
@@ -116,3 +121,6 @@ minetest.register_craftitem("waste_materials:gold_powder", {
    description = S("Gold Powder"),
    inventory_image = "waste_materials_gold_powder.png",
 })
+
+
+print("Waste loaded")

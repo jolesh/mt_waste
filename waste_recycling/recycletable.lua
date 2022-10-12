@@ -2,10 +2,12 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 function setloot()
    num = math.random(4)
-   if num == 1 then return "waste_materials:waste_glass_raw"
+	if num == 1 then return "waste_materials:waste_steel_object"
+   --[[if num == 1 then return "waste_materials:waste_glass_raw"
    elseif num == 2 then return "waste_materials:waste_metal_raw"
    elseif num == 3 then return "waste_materials:waste_plastic_raw"
-   elseif num == 4 then return "waste_materials:waste_paper_raw"
+   elseif num == 4 then return "waste_materials:waste_paper_raw"]]
+	else return "waste_materials:waste_useless_object"
    end
 end
 
@@ -57,9 +59,28 @@ minetest.register_node("waste_recycling:recycle_table", {
 
 	groups = {choppy = 2, oddly_breakable_by_hand = 1},
 
-   on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
-      minetest.swap_node(pos, {name = "waste_recycling:recycle_table_mixed_8"})
-   end,
+	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
+		 if clicker:is_player() then
+			 local nodename = itemstack:get_name()
+			 if nodename:match("waste_mixed_node") then
+					if not minetest.settings:get_bool("creative_mode") then
+						 itemstack:take_item()
+					end
+					minetest.swap_node(pos, {name = "waste_recycling:recycle_table_mixed_8"})
+			  else
+					minetest.chat_send_player(clicker:get_player_name(), "You need Waste!")
+					return itemstack
+			 end
+		 end
+	end,
+})
+
+minetest.register_craft({
+	output = "waste_recycling:recycle_table",
+	recipe = {
+		{"group:wood", "group:wood", "group:wood"},
+		{"group:stick", ""         , "group:stick"}
+	}
 })
 
 minetest.register_node("waste_recycling:recycle_table_mixed_8", {

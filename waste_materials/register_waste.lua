@@ -46,6 +46,18 @@ minetest.register_node("waste_materials:waste_glass_node", {
    groups = {oddly_breakable_by_hand = 2, waste = 1},
 })
 
+--Waste Objects
+
+minetest.register_craftitem("waste_materials:waste_steel_object", {
+   description = S("Steel Waste Object"),
+   inventory_image = "waste_materials_waste_steel_object.png",
+})
+
+minetest.register_craftitem("waste_materials:waste_useless_object", {
+   description = S("Useless Waste Object"),
+   inventory_image = "waste_materials_waste_useless_object.png",
+})
+
 --Raw waste
 
 minetest.register_craftitem("waste_materials:waste_glass_raw", {

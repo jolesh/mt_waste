@@ -53,6 +53,31 @@ minetest.register_craftitem("waste_materials:waste_steel_object", {
    inventory_image = "waste_materials_waste_steel_object.png",
 })
 
+minetest.register_craftitem("waste_materials:waste_gold_object", {
+   description = S("Gold Waste Object"),
+   inventory_image = "waste_materials_waste_gold_object.png",
+})
+
+minetest.register_craftitem("waste_materials:waste_diamond_object", {
+   description = S("Diamond Waste Object"),
+   inventory_image = "waste_materials_waste_diamond_object.png",
+})
+
+minetest.register_craftitem("waste_materials:waste_mese_object", {
+   description = S("Mese Waste Object"),
+   inventory_image = "waste_materials_waste_mese_object.png",
+})
+
+minetest.register_craftitem("waste_materials:waste_copper_object", {
+   description = S("Copper Waste Object"),
+   inventory_image = "waste_materials_waste_copper_object.png",
+})
+
+minetest.register_craftitem("waste_materials:waste_tin_object", {
+   description = S("Tin Waste Object"),
+   inventory_image = "waste_materials_waste_tin_object.png",
+})
+
 minetest.register_craftitem("waste_materials:waste_useless_object", {
    description = S("Useless Waste Object"),
    inventory_image = "waste_materials_waste_useless_object.png",

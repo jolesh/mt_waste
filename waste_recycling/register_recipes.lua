@@ -39,6 +39,40 @@ minetest.register_craft({
 	cooktime = 2,
 })
 
+minetest.register_craft({
+   type = "cooking",
+   output = "simple_recycle:gold_nugget",
+   recipe = "waste_materials:waste_gold_object",
+	cooktime = 2,
+})
+
+minetest.register_craft({
+   type = "cooking",
+   output = "simple_recycle:copper_nugget",
+   recipe = "waste_materials:waste_copper_object",
+	cooktime = 2,
+})
+
+minetest.register_craft({
+   type = "cooking",
+   output = "simple_recycle:tin_nugget",
+   recipe = "waste_materials:waste_tin_object",
+	cooktime = 2,
+})
+
+minetest.register_craft({
+   type = "shapeless",
+   output = "default:mese_crystal_fragment",
+   recipe = {"waste_materials:waste_mese_object"},
+})
+
+minetest.register_craft({
+   type = "shapeless",
+   output = "default:diamond",
+   recipe = {"waste_materials:waste_diamond_object"},
+	replacements = {{"waste_materials:waste_diamond_object", "waste_materials:waste_gold_object"}},
+})
+
 --Crafting
 
 ---Nuggets

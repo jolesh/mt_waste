@@ -5,7 +5,7 @@ local S = minetest.get_translator(minetest.get_current_modname())
 minetest.register_node("waste_materials:waste_mixed_node", {
    description = S("Mixed Waste"),
    tiles = {"waste_materials_waste_mixed_node.png"},
-   groups = {oddly_breakable_by_hand = 2, waste = 1},
+   groups = {oddly_breakable_by_hand = 2, waste = 1, falling_node = 1, crumbly = 3},
 })
 --[[
 minetest.register_node("waste_materials:waste_general_node", {
@@ -23,7 +23,7 @@ minetest.register_node("waste_materials:waste_organic_node", {
 minetest.register_node("waste_materials:waste_paper_node", {
    description = S("Paper Waste"),
    tiles = {"waste_materials_waste_paper_node.png"},
-   groups = {oddly_breakable_by_hand = 2, waste = 1},
+   groups = {oddly_breakable_by_hand = 2, waste = 1, falling_node = 1, crumbly = 3},
 })
 --[[
 minetest.register_node("waste_materials:waste_plastic_node", {
@@ -36,7 +36,7 @@ minetest.register_node("waste_materials:waste_metal_node", {
    description = S("Metal Waste"),
    tiles = "waste_materials_dummy_node.png",
    --tiles = {"waste_materials_waste_metal_node.png"}, --missing
-   groups = {oddly_breakable_by_hand = 2, waste = 1},
+   groups = {oddly_breakable_by_hand = 2, waste = 1, falling_node = 1, crumbly = 3},
 })
 
 minetest.register_node("waste_materials:waste_glass_node", {
@@ -81,6 +81,18 @@ minetest.register_craftitem("waste_materials:waste_tin_object", {
 minetest.register_craftitem("waste_materials:waste_useless_object", {
    description = S("Useless Waste Object"),
    inventory_image = "waste_materials_waste_useless_object.png",
+})
+
+minetest.register_craftitem("waste_materials:waste_food_can", {
+	description = S("Canned Food"),
+	inventory_image = "waste_materials_waste_food_can.png",
+	groups = {food = 1},
+	on_use = minetest.item_eat(4, "waste_materials:waste_food_can_empty")
+})
+
+minetest.register_craftitem("waste_materials:waste_food_can_empty", {
+	description = S("Empty Food Can"),
+	inventory_image = "waste_materials_waste_food_can_empty.png",
 })
 
 --Raw waste

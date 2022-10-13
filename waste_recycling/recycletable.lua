@@ -7,6 +7,7 @@ function setloot()
 	elseif num <= 4 then return "waste_materials:waste_mese_object"
 	elseif num <= 6 then return "waste_materials:waste_tin_object"
 	elseif num <= 15 then return "waste_materials:waste_copper_object"
+	elseif num <= 20 then return "waste_materials:waste_food_can"
 	elseif num <= 30 then return "waste_materials:waste_steel_object"
 	else return "waste_materials:waste_useless_object"
    end

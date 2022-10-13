@@ -35,6 +35,13 @@ minetest.register_craft({
 minetest.register_craft({
    type = "cooking",
    output = "nuggets:steel_nugget",
+   recipe = "waste_materials:waste_food_can_empty",
+	cooktime = 2,
+})
+
+minetest.register_craft({
+   type = "cooking",
+   output = "nuggets:steel_nugget",
    recipe = "waste_materials:waste_steel_object",
 	cooktime = 2,
 })

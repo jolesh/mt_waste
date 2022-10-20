@@ -192,5 +192,7 @@ minetest.register_craftitem("waste_materials:gold_powder", {
    inventory_image = "waste_materials_gold_powder.png",
 })
 
-
-print("Waste loaded")
+minetest.register_craftitem("waste_materials:waste_useless_powder", {
+   description = S("Useless Waste Powder"),
+   inventory_image = "waste_materials_waste_useless_powder.png",
+})

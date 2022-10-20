@@ -1,3 +1,17 @@
+--Burning
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "waste_materials:waste_useless_powder",
+	burntime = 2,
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "waste_materials:waste_useless_object",
+	burntime = 2,
+})
+
 --Smelting
 
 minetest.register_craft({

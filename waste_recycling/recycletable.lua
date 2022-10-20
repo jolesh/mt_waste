@@ -60,6 +60,7 @@ minetest.register_node("waste_recycling:recycle_table", {
 	},
 
 	groups = {choppy = 2, oddly_breakable_by_hand = 1},
+	sounds = default.node_sound_wood_defaults(),
 
 	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
 		 if clicker:is_player() then
@@ -69,6 +70,7 @@ minetest.register_node("waste_recycling:recycle_table", {
 						 itemstack:take_item()
 					end
 					minetest.swap_node(pos, {name = "waste_recycling:recycle_table_mixed_8"})
+		  			minetest.sound_play({name = "default_dig_snappy", gain = 0.25})
 			  else
 					minetest.chat_send_player(clicker:get_player_name(), "You need Waste!")
 					return itemstack
@@ -109,10 +111,13 @@ minetest.register_node("waste_recycling:recycle_table_mixed_8", {
 		},
 	},
 
+	drop = "waste_recycling:recycle_table",
 	groups = {choppy = 2, oddly_breakable_by_hand = 1, not_in_creative_inventory = 1},
+	sounds = default.node_sound_wood_defaults(),
 
    on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
       recycle(pos, node, clicker, itemstack, pointed_thing, 8)
+		minetest.sound_play({name = "default_dig_snappy", gain = 0.4, pitch = 0.9})
    end,
 })
 
@@ -140,10 +145,13 @@ minetest.register_node("waste_recycling:recycle_table_mixed_6", {
 		},
 	},
 
+	drop = "waste_recycling:recycle_table",
 	groups = {choppy = 2, oddly_breakable_by_hand = 1, not_in_creative_inventory = 1},
+	sounds = default.node_sound_wood_defaults(),
 
    on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
       recycle(pos, node, clicker, itemstack, pointed_thing, 6)
+		minetest.sound_play({name = "default_dig_snappy", gain = 0.3})
    end,
 })
 
@@ -171,10 +179,13 @@ minetest.register_node("waste_recycling:recycle_table_mixed_4", {
 		},
 	},
 
+	drop = "waste_recycling:recycle_table",
 	groups = {choppy = 2, oddly_breakable_by_hand = 1, not_in_creative_inventory = 1},
+	sounds = default.node_sound_wood_defaults(),
 
    on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
       recycle(pos, node, clicker, itemstack, pointed_thing, 4)
+		minetest.sound_play({name = "default_dig_snappy", gain = 0.35, pitch = 1.1})
    end,
 })
 
@@ -202,9 +213,12 @@ minetest.register_node("waste_recycling:recycle_table_mixed_2", {
 		},
 	},
 
+	drop = "waste_recycling:recycle_table",
 	groups = {choppy = 2, oddly_breakable_by_hand = 1, not_in_creative_inventory = 1},
+	sounds = default.node_sound_wood_defaults(),
 
    on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
       recycle(pos, node, clicker, itemstack, pointed_thing, 2)
+		minetest.sound_play({name = "default_dig_snappy", gain = 0.35, pitch = 0.8})
    end,
 })

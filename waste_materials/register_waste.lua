@@ -46,40 +46,61 @@ minetest.register_node("waste_materials:waste_glass_node", {
    groups = {oddly_breakable_by_hand = 2, waste = 1},
 })
 
+--Wasted Soils
+
+minetest.register_node("waste_materials:trashy_dirt", {
+	description = S("Trashy Dirt"),
+	tiles = {"default_dirt.png^waste_materials_waste_pieces.png"},
+	groups = {crumbly = 3, soil = 1},
+	sounds = default.node_sound_dirt_defaults(),
+})
+
+minetest.register_node("waste_materials:trashy_dirt_with_grass", {
+	description = S("Trashy Dirt with Dead Grass"),
+	tiles = {"default_dirt.png^waste_materials_waste_pieces.png^waste_materials_dead_grass.png", "default_dirt.png^waste_materials_waste_pieces.png",
+		{name = "default_dirt.png^waste_materials_waste_pieces.png",
+			tileable_vertical = false}},
+	groups = {crumbly = 3, soil = 1},
+	drop = "waste_materials:trashy_dirt",
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})
+
 --Waste Objects
 
 minetest.register_craftitem("waste_materials:waste_steel_object", {
-   description = S("Steel Waste Object"),
+   description = S("Crushed Steel Can"),
    inventory_image = "waste_materials_waste_steel_object.png",
 })
 
 minetest.register_craftitem("waste_materials:waste_gold_object", {
-   description = S("Gold Waste Object"),
+   description = S("Gold Ring"),
    inventory_image = "waste_materials_waste_gold_object.png",
 })
 
 minetest.register_craftitem("waste_materials:waste_diamond_object", {
-   description = S("Diamond Waste Object"),
+   description = S("Diamond Ring"),
    inventory_image = "waste_materials_waste_diamond_object.png",
 })
 
 minetest.register_craftitem("waste_materials:waste_mese_object", {
-   description = S("Mese Waste Object"),
+   description = S("Broken Flashlight"),
    inventory_image = "waste_materials_waste_mese_object.png",
 })
 
 minetest.register_craftitem("waste_materials:waste_copper_object", {
-   description = S("Copper Waste Object"),
+   description = S("Copper Waste"),
    inventory_image = "waste_materials_waste_copper_object.png",
 })
 
 minetest.register_craftitem("waste_materials:waste_tin_object", {
-   description = S("Tin Waste Object"),
+   description = S("Tin Cans"),
    inventory_image = "waste_materials_waste_tin_object.png",
 })
 
 minetest.register_craftitem("waste_materials:waste_useless_object", {
-   description = S("Useless Waste Object"),
+   description = S("Useless Waste"),
    inventory_image = "waste_materials_waste_useless_object.png",
 })
 

@@ -109,7 +109,7 @@ minetest.register_craft({
 	output = "waste_recycling:sieve_empty",
 	recipe = {
 		{"group:wood", "waste_recycling:grid_stick", "group:wood"},
-		{"group:wood", "",                    "group:wood"}
+		{"group:stick", "",                        "group:stick"}
 	}
 })
 

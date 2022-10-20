@@ -5,9 +5,9 @@ function wait(seconds)
     repeat until os.time() > start + seconds
 end
 
---Hammermill
+--Hammermill T1
 
-local function get_formspec_bench() -- Hammermill formspec
+local function get_formspec_bench() -- Hammermill T1 formspec
 	return "size[10,10]"..
 		"image[4,2;1,1;sfinv_crafting_arrow.png]"..
 		"list[context;input;2,2;1,1;1]"..
@@ -31,8 +31,8 @@ local function hammer(pos)
 		end
 end
 
-minetest.register_node("waste_recycling:hammermill", {
-   description = S("Hammermill"),
+minetest.register_node("waste_recycling:hammermill_t1", {
+   description = S("Hammermill T1"),
    tiles = {
          "waste_recycling_case_t1.png",  -- TOP
          "waste_recycling_case_t1.png",  -- BOTTOM
@@ -40,7 +40,7 @@ minetest.register_node("waste_recycling:hammermill", {
          "waste_recycling_case_t1.png",  -- RIGHT
          "waste_recycling_case_t1.png",  -- FRONT
          { -- BACK
-   			image = "waste_recycling_animation_hammermill.png",
+   			image = "waste_recycling_animation_hammermill_t1.png",
    			backface_culling = false,
    			animation = {
    				type = "vertical_frames",
@@ -53,7 +53,7 @@ minetest.register_node("waste_recycling:hammermill", {
 	paramtype2 = "facedir",
    groups = {oddly_breakable_by_hand = 2},
 
-   on_construct = function(pos, node) --Create Hammermill UI
+   on_construct = function(pos, node) --Create Hammermill T1 UI
       local meta = minetest.get_meta(pos)
       local inv = meta:get_inventory()
       inv:set_size("result", 2*1)
@@ -74,7 +74,7 @@ minetest.register_node("waste_recycling:hammermill", {
 
 --Shaker Table
 
-local function get_formspec_shaker_table() -- Hammermill formspec
+local function get_formspec_shaker_table() -- Shaker Table T1 formspec
 	return "size[10,11]"..
 		"image[4,2;1,1;sfinv_crafting_arrow.png]"..
 		"list[context;input;2,2;1,1;1]"..
@@ -85,15 +85,16 @@ local function get_formspec_shaker_table() -- Hammermill formspec
 		"list[current_player;main;1,6;8,4;]"
 end
 
-local function shake(pos)
+local function shake_t1(pos)
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
 		local stack = inv:get_stack("input", 2)
 		if stack:get_name() == "waste_materials:waste_metal_fine" then
-			num = math.random(3) --add result
-		   if num == 1 then inv:add_item("result1", "waste_materials:waste_metal_fine_1")
-		   elseif num == 2 then inv:add_item("result2", "waste_materials:waste_metal_fine_2")
-		   elseif num == 3 then inv:add_item("result3", "waste_materials:waste_metal_fine_3")
+			num = math.random(100) --add result
+		   if num <= 3 then inv:add_item("result1", "waste_materials:gold_powder")
+		   elseif num <= 25 then inv:add_item("result2", "waste_materials:steel_powder")
+		   elseif num <= 30 then inv:add_item("result3", "waste_materials:tin_powder")
+		   else inv:add_item("result4", "waste_materials:waste_useless_powder")
 		   end
 
 			inv:remove_item("input", stack:get_name()) --reduce input
@@ -106,10 +107,10 @@ local function shake(pos)
 		end
 end
 
-minetest.register_node("waste_recycling:shaker_table", {
-   description = S("Shaker Table"),
+minetest.register_node("waste_recycling:shaker_table_t1", {
+   description = S("Shaker Table T1"),
    tiles = {{ -- BACK
-		image = "waste_recycling_animation_hammermill.png",
+		image = "waste_recycling_animation_hammermill_t1.png",
 		backface_culling = false,
 		animation = {
 			type = "vertical_frames",
@@ -128,7 +129,7 @@ minetest.register_node("waste_recycling:shaker_table", {
 	paramtype2 = "facedir",
    groups = {oddly_breakable_by_hand = 2},
 
-   on_construct = function(pos, node) --Create Hammermill UI
+   on_construct = function(pos, node) --Create Shaker Table T1 UI
       local meta = minetest.get_meta(pos)
       local inv = meta:get_inventory()
       inv:set_size("result4", 2*1)
@@ -145,7 +146,7 @@ minetest.register_node("waste_recycling:shaker_table", {
    end,
 
    on_timer = function(pos)
-      shake(pos)
+      shake_t1(pos)
       return false
    end,
 })

@@ -19,8 +19,17 @@ local function hammer(pos)
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
 		local stack = inv:get_stack("input", 2)
-		if stack:get_name() == "waste_materials:waste_metal_raw" then
-			inv:add_item("result", "waste_materials:waste_metal_fine") --add result
+		if stack:get_name() == "waste_materials:waste_metal_raw" or stack:get_name() == "waste_materials:waste_mixed_node" then -- check if correct input
+			--Find out which input and set output accordingly
+			if stack:get_name() == "waste_materials:waste_metal_raw" then
+				inv:add_item("result", "waste_materials:waste_metal_fine")
+			elseif stack:get_name() == "waste_materials:waste_mixed_node" then
+				inv:add_item("result", "waste_materials:waste_mixed_fine")
+			elseif stack:get_name() == "waste_materials:waste_useless_object" then
+				inv:add_item("result", "waste_materials:waste_useless_powder")
+			end
+
+			--set timer if more
 			inv:remove_item("input", stack:get_name()) --reduce input
          if inv:is_empty("input") then --call again if more, else exit
             return
@@ -89,22 +98,39 @@ local function shake_t1(pos)
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
 		local stack = inv:get_stack("input", 2)
-		if stack:get_name() == "waste_materials:waste_metal_fine" then
-			num = math.random(100) --add result
-		   if num <= 3 then inv:add_item("result1", "waste_materials:gold_powder")
-		   elseif num <= 25 then inv:add_item("result2", "waste_materials:steel_powder")
-		   elseif num <= 30 then inv:add_item("result3", "waste_materials:tin_powder")
-		   else inv:add_item("result4", "waste_materials:waste_useless_powder")
-		   end
+		if stack:get_name() == "waste_materials:waste_metal_fine" or stack:get_name() == "waste_materials:waste_mixed_fine" or stack:get_name() == "waste_materials:waste_useless_fine" then -- check if correct input
+			--Find out which input and set output accordingly
+			if stack:get_name() == "waste_materials:waste_metal_fine" then
+				num = math.random(100) --add result
+			   if num <= 3 then inv:add_item("result1", "waste_materials:gold_powder")
+			   elseif num <= 25 then inv:add_item("result2", "waste_materials:steel_powder")
+			   elseif num <= 30 then inv:add_item("result3", "waste_materials:tin_powder")
+			   else inv:add_item("result4", "waste_materials:waste_unrecycleable_fine")
+			   end
+			elseif stack:get_name() == "waste_materials:waste_mixed_fine" then
+				num = math.random(100) --add result
+			   if num <= 1 then inv:add_item("result1", "waste_materials:gold_powder")
+			   elseif num <= 10 then inv:add_item("result2", "waste_materials:steel_powder")
+			   elseif num <= 11 then inv:add_item("result3", "waste_materials:tin_powder")
+			   else inv:add_item("result4", "waste_materials:waste_unrecycleable_fine")
+			   end
+			elseif stack:get_name() == "waste_materials:waste_useless_fine" then
+				num = math.random(200) --add result
+				if num <= 1 then inv:add_item("result1", "waste_materials:gold_powder")
+				elseif num <= 10 then inv:add_item("result2", "waste_materials:steel_powder")
+				elseif num <= 11 then inv:add_item("result3", "waste_materials:tin_powder")
+				else inv:add_item("result4", "waste_materials:waste_unrecycleable_fine")
+				end
+			end
 
-			inv:remove_item("input", stack:get_name()) --reduce input
-         if inv:is_empty("input") then --call again if more, else exit
-            return
-         else
-            local timer = minetest.get_node_timer(pos)
-            timer:start(1.5)
-         end
-		end
+		inv:remove_item("input", stack:get_name()) --reduce input
+      if inv:is_empty("input") then --call again if more, else exit
+         return
+      else
+         local timer = minetest.get_node_timer(pos)
+         timer:start(1.5)
+      end
+	end
 end
 
 minetest.register_node("waste_recycling:shaker_table_t1", {

@@ -19,12 +19,12 @@ local function hammer(pos)
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
 		local stack = inv:get_stack("input", 2)
-		if stack:get_name() == "waste_materials:waste_metal_raw" or stack:get_name() == "waste_materials:waste_mixed_node" then -- check if correct input
+		if stack:get_name() == "waste_materials:waste_metal_node" or stack:get_name() == "waste_materials:waste_mixed_node" then -- check if correct input
 			--Find out which input and set output accordingly
-			if stack:get_name() == "waste_materials:waste_metal_raw" then
-				inv:add_item("result", "waste_materials:waste_metal_fine")
+			if stack:get_name() == "waste_materials:waste_metal_node" then
+				inv:add_item("result", "waste_materials:waste_metal_fine 4")
 			elseif stack:get_name() == "waste_materials:waste_mixed_node" then
-				inv:add_item("result", "waste_materials:waste_mixed_fine")
+				inv:add_item("result", "waste_materials:waste_mixed_fine 4")
 			elseif stack:get_name() == "waste_materials:waste_useless_object" then
 				inv:add_item("result", "waste_materials:waste_useless_powder")
 			end

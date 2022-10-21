@@ -99,9 +99,8 @@ minetest.register_craftitem("waste_recycling:grid_stick", {
 minetest.register_craft({
 	output = "waste_recycling:grid_stick",
 	recipe = {
-		{"group:stick", "group:stick", "group:stick"},
-		{"group:stick", "group:stick", "group:stick"},
-      {"group:stick", "group:stick", "group:stick"},
+		{"group:stick", "group:stick"},
+		{"group:stick", "group:stick"},
 	}
 })
 

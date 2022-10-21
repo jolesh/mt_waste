@@ -2,7 +2,7 @@
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "waste_materials:waste_useless_powder",
+	recipe = "waste_materials:waste_useless_fine",
 	burntime = 2,
 })
 
@@ -12,13 +12,19 @@ minetest.register_craft({
 	burntime = 2,
 })
 
---Smelting
+minetest.register_craft({
+	type = "fuel",
+	recipe = "waste_materials:waste_unrecycleable_fine",
+	burntime = 2,
+})
 
+--Smelting
+--[[
 minetest.register_craft({
    type = "cooking",
    output = "default:glass",
    recipe = "waste_materials:waste_glass_raw",
-})
+})]]
 
 minetest.register_craft({
    type = "cooking",
@@ -28,7 +34,7 @@ minetest.register_craft({
 
 minetest.register_craft({
    type = "cooking",
-   output = "nuggets:copper_nuggett",
+   output = "nuggets:copper_nugget",
    recipe = "waste_materials:copper_powder",
 })
 

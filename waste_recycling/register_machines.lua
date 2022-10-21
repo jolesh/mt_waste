@@ -102,25 +102,25 @@ local function shake_t1(pos)
 			--Find out which input and set output accordingly
 			if stack:get_name() == "waste_materials:waste_metal_fine" then
 				num = math.random(100) --add result
-			   if num <= 3 then inv:add_item("result1", "waste_materials:gold_powder")
-			   elseif num <= 25 then inv:add_item("result2", "waste_materials:steel_powder")
-			   elseif num <= 30 then inv:add_item("result3", "waste_materials:tin_powder")
+			   if num <= 4 then inv:add_item("result1", "waste_materials:gold_powder")
+			   elseif num <= 30 then inv:add_item("result2", "waste_materials:steel_powder")
+			   elseif num <= 34 then inv:add_item("result3", "waste_materials:tin_powder")
 			   else inv:add_item("result4", "waste_materials:waste_unrecycleable_fine")
 			   end
 			elseif stack:get_name() == "waste_materials:waste_mixed_fine" then
 				num = math.random(100) --add result
-			   if num <= 1 then inv:add_item("result1", "waste_materials:gold_powder")
-			   elseif num <= 10 then inv:add_item("result2", "waste_materials:steel_powder")
-			   elseif num <= 11 then inv:add_item("result3", "waste_materials:tin_powder")
+			   if num <= 2 then inv:add_item("result1", "waste_materials:gold_powder")
+			   elseif num <= 15 then inv:add_item("result2", "waste_materials:steel_powder")
+			   elseif num <= 17 then inv:add_item("result3", "waste_materials:tin_powder")
 			   else inv:add_item("result4", "waste_materials:waste_unrecycleable_fine")
 			   end
 			elseif stack:get_name() == "waste_materials:waste_useless_fine" then
 				num = math.random(200) --add result
 				if num <= 1 then inv:add_item("result1", "waste_materials:gold_powder")
-				elseif num <= 10 then inv:add_item("result2", "waste_materials:steel_powder")
-				elseif num <= 11 then inv:add_item("result3", "waste_materials:tin_powder")
-				else inv:add_item("result4", "waste_materials:waste_unrecycleable_fine")
-				end
+				elseif num <= 15 then inv:add_item("result2", "waste_materials:steel_powder")
+			   elseif num <= 17 then inv:add_item("result3", "waste_materials:tin_powder")
+			   else inv:add_item("result4", "waste_materials:waste_unrecycleable_fine")
+			   end
 			end
 
 		inv:remove_item("input", stack:get_name()) --reduce input

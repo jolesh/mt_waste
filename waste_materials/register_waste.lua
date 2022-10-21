@@ -5,7 +5,7 @@ local S = minetest.get_translator(minetest.get_current_modname())
 minetest.register_node("waste_materials:waste_mixed_node", {
    description = S("Mixed Waste"),
    tiles = {"waste_materials_waste_mixed_node.png"},
-   groups = {oddly_breakable_by_hand = 2, waste = 1, falling_node = 1, crumbly = 3},
+   groups = {oddly_breakable_by_hand = 2, waste = 1, waste_node = 1, falling_node = 1, crumbly = 3},
 })
 --[[
 minetest.register_node("waste_materials:waste_general_node", {
@@ -36,7 +36,7 @@ minetest.register_node("waste_materials:waste_metal_node", {
    description = S("Metal Waste"),
    tiles = "waste_materials_dummy_node.png",
    --tiles = {"waste_materials_waste_metal_node.png"}, --missing
-   groups = {oddly_breakable_by_hand = 2, waste = 1, falling_node = 1, crumbly = 3},
+   groups = {oddly_breakable_by_hand = 2, waste = 1, waste_node = 1, falling_node = 1, crumbly = 3},
 })
 --[[
 minetest.register_node("waste_materials:waste_glass_node", {
@@ -51,7 +51,7 @@ minetest.register_node("waste_materials:waste_glass_node", {
 minetest.register_node("waste_materials:trashy_dirt", {
 	description = S("Trashy Dirt"),
 	tiles = {"default_dirt.png^waste_materials_waste_pieces.png"},
-	groups = {crumbly = 3, soil = 1},
+	groups = {crumbly = 3, soil = 1, trashy_dirt = 1},
 	sounds = default.node_sound_dirt_defaults(),
 })
 
@@ -60,7 +60,7 @@ minetest.register_node("waste_materials:trashy_dirt_with_grass", {
 	tiles = {"default_dirt.png^waste_materials_waste_pieces.png^waste_materials_dead_grass.png", "default_dirt.png^waste_materials_waste_pieces.png",
 		{name = "default_dirt.png^waste_materials_waste_pieces.png",
 			tileable_vertical = false}},
-	groups = {crumbly = 3, soil = 1},
+	groups = {crumbly = 3, soil = 1, trashy_dirt = 1},
 	drop = "waste_materials:trashy_dirt",
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_grass_footstep", gain = 0.25},

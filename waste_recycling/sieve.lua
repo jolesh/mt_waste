@@ -80,13 +80,16 @@ minetest.register_node("waste_recycling:sieve_empty", {
 
    on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
       if clicker:is_player() then
-          local nodename = itemstack:get_name()
-          if nodename:match("waste_materials:trashy_dirt") then
-               if not minetest.settings:get_bool("creative_mode") then
-                   itemstack:take_item()
-               end
-               minetest.swap_node(pos, { name = "waste_recycling:sieve_trashy_dirt_8" })
-          end
+         local nodename = itemstack:get_name()
+         if nodename:match("waste_materials:trashy_dirt") then
+            if not minetest.settings:get_bool("creative_mode") then
+                itemstack:take_item()
+            end
+            minetest.swap_node(pos, { name = "waste_recycling:sieve_trashy_dirt_8" })
+				minetest.sound_play({name = "default_dig_snappy", gain = 0.25})
+			else
+				minetest.chat_send_player(clicker:get_player_name(), S("You need Trashy Dirt!"))
+         end
       end
    end,
 })
@@ -250,43 +253,8 @@ minetest.register_node("waste_recycling:sieve_trashy_dirt_2", {
 
 	groups = {choppy = 2, oddly_breakable_by_hand = 1, not_in_creative_inventory = 1},
 	--sounds = metal_sounds,
-   drop = {
-      max_items = 3,
-      items = {
-         {
-            rarity = 100,
-            items = {"default:diamond"}
-         },
-         {
-            rarity = 50,
-            items = {"default:mese_crystal"}
-         },
-         {
-            rarity = 20,
-            items = {"waste_recycling:lump_small_gold"}
-         },
-         {
-            rarity = 10,
-            items = {"waste_recycling:lump_small_iron"}
-         },
-         {
-            rarity = 10,
-            items = {"default:coal_lump"}
-         },
-         {
-            rarity = 5,
-            items = {"waste_recycling:lump_small_tin"}
-         },
-         {
-            rarity = 5,
-            items = {"waste_recycling:lump_small_copper"}
-         },
-         {
-            rarity = 5,
-            items = {"default:flint"}
-         },
-      },
-   },
+
+	drop = "waste_recycling:sieve_empty",
 
 	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
 		if clicker:is_player() then

@@ -1,0 +1,4 @@
+# Settings Applicable by GUI
+
+# Enable Wasteland
+enable_wasteland (Enable Wasteland) bool false

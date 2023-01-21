@@ -100,31 +100,45 @@ minetest.register_craft({
 	replacements = {{"waste_materials:waste_diamond_object", "waste_materials:waste_gold_object"}},
 })
 
---Machines
+--only add recipes if machines are enabled
+if minetest.settings:get("enable_waste_recycling_machines") then
 
-minetest.register_craft({
-	output = "waste_recycling:case_t1",
-	recipe = {
-		{""                   , "default:steel_ingot", ""},
-		{"default:steel_ingot", "group:wood"         , "default:steel_ingot"},
-		{""                   , "default:steel_ingot", ""},
-	}
-})
+	--Other
 
-minetest.register_craft({
-	output = "waste_recycling:hammermill_t1",
-	recipe = {
-		{""                   , "default:steel_ingot"    , ""},
-		{"default:steel_ingot", "waste_recycling:case_t1", "default:steel_ingot"},
-		{""                   , "default:furnace"        , ""},
-	}
-})
+	minetest.register_craft({
+		output = "waste_recycling:copper_cable 3",
+		recipe = {
+			{"nuggets:copper_nugget", "nuggets:copper_nugget", "nuggets:copper_nugget"},
+		}
+	})
 
-minetest.register_craft({
-	output = "waste_recycling:shaker_table_t1",
-	recipe = {
-		{""                   , "waste_recycling:sieve_empty"    , ""},
-		{"waste_recycling:grid_stick", "waste_recycling:case_t1", "waste_recycling:grid_stick"},
-		{""                   , "default:furnace"        , ""},
-	}
-})
+	--Machines
+
+	minetest.register_craft({
+		output = "waste_recycling:case_t1",
+		recipe = {
+			{""                   , "default:steel_ingot", ""},
+			{"default:steel_ingot", "group:wood"         , "default:steel_ingot"},
+			{""                   , "default:steel_ingot", ""},
+		}
+	})
+
+	minetest.register_craft({
+		output = "waste_recycling:hammermill_t1",
+		recipe = {
+			{""                   , "default:steel_ingot"    , ""},
+			{"default:steel_ingot", "waste_recycling:case_t1", "default:steel_ingot"},
+			{""                   , "default:furnace"        , ""},
+		}
+	})
+
+	minetest.register_craft({
+		output = "waste_recycling:shaker_table_t1",
+		recipe = {
+			{""                   , "waste_recycling:sieve_empty"    , ""},
+			{"waste_recycling:grid_stick", "waste_recycling:case_t1", "waste_recycling:grid_stick"},
+			{""                   , "default:furnace"        , ""},
+		}
+	})
+
+end

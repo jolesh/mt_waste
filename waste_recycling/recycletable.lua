@@ -72,7 +72,7 @@ minetest.register_node("waste_recycling:recycle_table", {
 					minetest.swap_node(pos, {name = "waste_recycling:recycle_table_mixed_8"})
 		  			minetest.sound_play({name = "default_dig_snappy", gain = 0.25})
 			  else
-					minetest.chat_send_player(clicker:get_player_name(), "You need Waste!")
+					minetest.chat_send_player(clicker:get_player_name(), S("You need Waste!"))
 					return itemstack
 			 end
 		 end

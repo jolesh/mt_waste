@@ -8,6 +8,11 @@ minetest.register_node("waste_recycling:case_t1", {
    groups = {oddly_breakable_by_hand = 2},
 })
 
+minetest.register_craftitem("waste_recycling:copper_cable", {
+   description = S("Copper Cable"),
+   inventory_image = "waste_recycling_copper_cable.png",
+})
+
 --Items
 --[[
 minetest.register_craftitem("waste_recycling:magnet", {

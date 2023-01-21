@@ -90,7 +90,7 @@ minetest.register_craftitem("waste_materials:waste_mese_object", {
 })
 
 minetest.register_craftitem("waste_materials:waste_copper_object", {
-   description = S("Copper Waste"),
+   description = S("Copper Cable"),
    inventory_image = "waste_materials_waste_copper_object.png",
 })
 

@@ -1,0 +1,4 @@
+# Settings Applicable by GUI
+
+# Enable Waste Recycling Machines
+enable_waste_recycling_machines (Enable Waste Recycling Machines) bool false

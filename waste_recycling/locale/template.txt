@@ -1,0 +1,24 @@
+# textdomain: waste_recycling
+Waste Cleanup=
+Dig your first waste node=
+Build a Recycle Table=
+Trashy Dirt=
+Dig some trashy dirt up=
+Build a Sieve=
+Diamond Recycler=
+Recycle a Diamond Shard=
+Raccoon=
+Eat Food found in waste=
+You need Waste!=
+Recycle Table=
+T1 Casing=
+Copper Cable=
+Magnet=
+Hammermill T1=
+Shaker Table T1=
+You need Trashy Dirt!=
+Stick Grid=
+Sieve with trashy_dirt=
+Sieve=
+Furnace is empty=
+Hammermill=

@@ -118,7 +118,7 @@ minetest.register_craft({
 --Sieves with Trashy Dirt
 
 minetest.register_node("waste_recycling:sieve_trashy_dirt_8", {
-	description = S("Sieve with trashy_dirt"),
+	description = S("Sieve with Trashy Dirt"),
 	drawtype = "nodebox",
     tiles = {
           "default_wood.png^waste_recycling_sieve_trashy_dirt_t.png",  -- TOP
@@ -155,7 +155,7 @@ minetest.register_node("waste_recycling:sieve_trashy_dirt_8", {
 })
 
 minetest.register_node("waste_recycling:sieve_trashy_dirt_6", {
-	description = S("Sieve with trashy_dirt"),
+	description = S("Sieve with Trashy Dirt"),
 	drawtype = "nodebox",
     tiles = {
           "default_wood.png^waste_recycling_sieve_trashy_dirt_t.png",  -- TOP
@@ -191,7 +191,7 @@ minetest.register_node("waste_recycling:sieve_trashy_dirt_6", {
 })
 
 minetest.register_node("waste_recycling:sieve_trashy_dirt_4", {
-	description = S("Sieve with trashy_dirt"),
+	description = S("Sieve with Trashy Dirt"),
 	drawtype = "nodebox",
     tiles = {
           "default_wood.png^waste_recycling_sieve_trashy_dirt_t.png",  -- TOP
@@ -228,7 +228,7 @@ minetest.register_node("waste_recycling:sieve_trashy_dirt_4", {
 })
 
 minetest.register_node("waste_recycling:sieve_trashy_dirt_2", {
-	description = S("Sieve with trashy_dirt"),
+	description = S("Sieve with Trashy Dirt"),
 	drawtype = "nodebox",
     tiles = {
           "default_wood.png^waste_recycling_sieve_trashy_dirt_t.png",  -- TOP

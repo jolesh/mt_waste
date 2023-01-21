@@ -7,7 +7,7 @@ awards.register_award("waste_recycling:award_cleanup",{
 	difficulty = 0.03,
 
 	on_unlock = function(name, def)
-		minetest.chat_send_player(name, "Oh, look how much waste there is. Collect some more and build a Recycle Table to sort the waste.")
+		minetest.chat_send_player(name, S("Oh, look how much waste there is. Collect some more and build a Recycle Table to sort the waste."))
 	end,
 
 	trigger = {
@@ -24,7 +24,7 @@ awards.register_award("waste_recycling:award_recycle_table",{
 	difficulty = 0.05,
 
 	on_unlock = function(name, def)
-		minetest.chat_send_player(name, "Good work! Now rightclick with some waste node to place it on the Recycle Table. Then rightclick several times to sort it. Afterwards you can smelt metal waste objects and take other waste objects apart by crafting.")
+		minetest.chat_send_player(name, S("Good work! Now rightclick with some waste node to place it on the Recycle Table. Then rightclick several times to sort it. Afterwards you can smelt metal waste objects and take other waste objects apart by crafting."))
 	end,
 
 	trigger = {
@@ -41,7 +41,7 @@ awards.register_award("waste_recycling:award_trashy_dirt",{
 	difficulty = 0.03,
 
 	on_unlock = function(name, def)
-		minetest.chat_send_player(name, "Oh, look how much trashy dirt there is around here. Collect some more and build a Sieve to sort out the waste and clean the dirt up.")
+		minetest.chat_send_player(name, S("Oh, look how much trashy dirt there is around here. Collect some more and build a Sieve to sort out the waste and clean the dirt up."))
 	end,
 
 	trigger = {
@@ -58,7 +58,7 @@ awards.register_award("waste_recycling:award_sieve",{
 	difficulty = 0.05,
 
 	on_unlock = function(name, def)
-		minetest.chat_send_player(name, "Good work! Now rightclick with some waste node to place it in the Sieve. Then rightclick several times to sieve it. Afterwards you can smelt metal waste objects and take other waste objects apart by crafting.")
+		minetest.chat_send_player(name, S("Good work! Now rightclick with some waste node to place it in the Sieve. Then rightclick several times to sieve it. Afterwards you can smelt metal waste objects and take other waste objects apart by crafting."))
 	end,
 
 	trigger = {
@@ -75,7 +75,7 @@ awards.register_award("waste_recycling:award_diamond_recycler",{
 	difficulty = 0.07,
 
 	on_unlock = function(name, def)
-		minetest.chat_send_player(name, "Nice! Now you know the basics of manuel waste recycling. You can craft a hammermill as first step of automatisation.")
+		minetest.chat_send_player(name, S("Nice! Now you know the basics of manuel waste recycling. You can craft a hammermill as first step of automatisation."))
 	end,
 
 	trigger = {
